@@ -54,9 +54,11 @@ img {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--text-muted);
   border-radius: 10px;
@@ -184,15 +186,20 @@ section {
 .hero {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 60px;
+  justify-content: center;
+  gap: 40px;
   padding-top: 120px;
+  text-align: center;
 }
 
 .hero-content {
   flex: 1;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-greeting {
@@ -202,6 +209,7 @@ section {
   margin-bottom: 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -245,6 +253,7 @@ section {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
@@ -329,6 +338,7 @@ section {
   margin-top: 50px;
   padding-top: 30px;
   border-top: 1px solid var(--border);
+  justify-content: center;
 }
 
 .stat-item h3 {
@@ -562,14 +572,35 @@ section {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: var(--transition);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  border-color: var(--border-hover);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent);
+  box-shadow:
+    0 0 15px rgba(100, 255, 218, 0.15),
+    0 0 40px rgba(100, 255, 218, 0.1),
+    0 0 80px rgba(100, 255, 218, 0.05),
+    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius);
+  background: radial-gradient(circle at 50% 50%, rgba(100, 255, 218, 0.12), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.project-card:hover::after {
+  opacity: 1;
 }
 
 .project-image {
@@ -648,7 +679,7 @@ section {
   margin-bottom: 16px;
 }
 
-.contact-info > p {
+.contact-info>p {
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.8;
@@ -702,6 +733,10 @@ section {
   gap: 14px;
 }
 
+.social-link-wrapper {
+  position: relative;
+}
+
 .social-link {
   width: 44px;
   height: 44px;
@@ -720,6 +755,42 @@ section {
   color: var(--bg-primary);
   border-color: var(--accent);
   transform: translateY(-3px);
+}
+
+.social-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--bg-secondary);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-hover);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.social-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--border-hover);
+}
+
+.social-link-wrapper:hover .social-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Contact Form */
@@ -813,7 +884,7 @@ section {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal.visible {
@@ -821,15 +892,33 @@ section {
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
 
 /* Floating animation for decoration */
 @keyframes float {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-8px, -12px); }
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-8px, -12px);
+  }
 }
 
 .hero-image-decoration {
@@ -841,18 +930,23 @@ section {
   section {
     padding: 80px 40px;
   }
+
   .navbar {
     padding: 18px 30px;
   }
+
   .navbar.scrolled {
     padding: 14px 30px;
   }
+
   .hero-name {
     font-size: 3rem;
   }
+
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .hero-image-wrapper {
     width: 280px;
     height: 350px;
@@ -896,18 +990,12 @@ section {
   }
 
   .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 40px;
+    gap: 30px;
     padding-top: 100px;
   }
 
   .hero-content {
     max-width: 100%;
-  }
-
-  .hero-greeting {
-    justify-content: center;
   }
 
   .hero-name {
