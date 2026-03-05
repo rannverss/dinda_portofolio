@@ -1,62 +1,424 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Home</title>
+  <title>Dinda Kirani W — Portfolio</title>
+  <meta name="description"
+    content="Portfolio Dinda Kirani W — Pelajar RPL SMK Negeri 1 Lumajang yang memiliki passion di bidang desain & teknologi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="about.html">Tentang</a></li>
-        <li><a href="portfolio.html">Projek</a></li>
-        <li><a href="contactg.html">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="container">
-
-    <div class="left">
-      <div class="photo-frame">
-        <img src="img/dinda.jpeg" alt="Foto Profil">
-      </div>
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-logo">dinda<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="active">Beranda</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#skills">Keahlian</a></li>
+      <li><a href="#portfolio">Projek</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </nav>
 
-    <div class="right">
-      <p class="small-text">Portofolio</p>
-      <h1>Dinda<br>Kirani W</h1>
-
-      <div class="line"></div>
-
-      <p class="desc">
-        Saya adalah seorang pelajar dari SMK Negeri 1 Lumajang!
-        Jurusan Rekayasa Perangkat Lunak.
-        Memiliki minat dalam bidang teknologi, terutama dalam desain dan grafis.
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Halo, saya</p>
+      <h1 class="hero-name">Dinda Kirani<br><span class="accent">W.</span></h1>
+      <p class="hero-role">Pelajar RPL · Designer · Creative Enthusiast</p>
+      <p class="hero-desc">
+        Seorang pelajar dari SMK Negeri 1 Lumajang dengan jurusan Rekayasa Perangkat Lunak.
+        Memiliki passion yang besar dalam bidang teknologi, terutama dalam desain dan grafis.
       </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> Hubungi Saya
+        </a>
+        <a href="#portfolio" class="btn btn-outline">
+          <i class="fas fa-eye"></i> Lihat Projek
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <h3>3+</h3>
+          <p>Projek</p>
+        </div>
+        <div class="stat-item">
+          <h3>2+</h3>
+          <p>Tahun Belajar</p>
+        </div>
+        <div class="stat-item">
+          <h3>5+</h3>
+          <p>Keahlian</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-wrapper">
+        <img src="img/dinda.jpeg" alt="Foto Dinda Kirani W">
+      </div>
+      <div class="hero-image-decoration"></div>
+    </div>
+  </section>
 
-      <div class="pagination">
-        <a href="index.html" class="nav-btn prev">←</a>
+  <!-- ===== About Section ===== -->
+  <section class="about" id="about">
+    <span class="section-label reveal">Tentang Saya</span>
+    <h2 class="section-title reveal">Mengenal Lebih Dekat<span class="accent">.</span></h2>
+    <p class="section-subtitle reveal">Seorang pelajar yang antusias di bidang teknologi dan desain.</p>
 
-        <a href="index.html" class="nav-btn page active">1</a>
-        <a href="about.html" class="nav-btn page">2</a>
-        <a href="portfolio.html" class="nav-btn page">3</a>
-        <a href="contactg.html" class="nav-btn page">4</a>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="reveal">
+          Halo! Saya <strong>Dinda Kirani W</strong>, seorang pelajar dari SMK Negeri 1 Lumajang dengan jurusan
+          Rekayasa Perangkat Lunak. Saya memiliki passion yang besar dalam bidang teknologi, terutama dalam
+          desain dan grafis.
+        </p>
+        <p class="reveal">
+          Melalui pendidikan dan pengalaman yang saya dapatkan, saya telah mengembangkan keterampilan dalam berbagai
+          aspek
+          pengembangan perangkat lunak dan desain visual. Saya selalu terbuka untuk belajar hal-hal baru dan
+          berkolaborasi
+          dengan orang-orang yang memiliki visi yang sama.
+        </p>
 
-        <a href="about.html" class="nav-btn next">→</a>
+        <div class="about-info-grid reveal">
+          <div class="info-item">
+            <div class="label">Nama</div>
+            <div class="value">Dinda Kirani W</div>
+          </div>
+          <div class="info-item">
+            <div class="label">Sekolah</div>
+            <div class="value">SMKN 1 Lumajang</div>
+          </div>
+          <div class="info-item">
+            <div class="label">Jurusan</div>
+            <div class="value">Rekayasa Perangkat Lunak</div>
+          </div>
+          <div class="info-item">
+            <div class="label">Lokasi</div>
+            <div class="value">Lumajang, Jawa Timur</div>
+          </div>
+        </div>
       </div>
 
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-year">2024 — Sekarang</span>
+          <h4 class="timeline-title">SMK Negeri 1 Lumajang</h4>
+          <p class="timeline-desc">Menempuh pendidikan jurusan Rekayasa Perangkat Lunak, mempelajari pemrograman,
+            desain, dan pengembangan aplikasi.</p>
+        </div>
+        <div class="timeline-item reveal reveal-delay-1">
+          <span class="timeline-year">2023</span>
+          <h4 class="timeline-title">Mulai Belajar Desain Grafis</h4>
+          <p class="timeline-desc">Mendalami desain grafis menggunakan berbagai tools kreatif dan mengembangkan
+            portofolio desain.</p>
+        </div>
+        <div class="timeline-item reveal reveal-delay-2">
+          <span class="timeline-year">2022</span>
+          <h4 class="timeline-title">Awal Mula Ketertarikan Teknologi</h4>
+          <p class="timeline-desc">Mulai tertarik dengan dunia teknologi dan mempelajari dasar-dasar pemrograman secara
+            mandiri.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <!-- ===== Skills Section ===== -->
+  <section class="skills" id="skills">
+    <span class="section-label reveal">Keahlian</span>
+    <h2 class="section-title reveal">Yang Saya Kuasai<span class="accent">.</span></h2>
+    <p class="section-subtitle reveal">Berbagai keterampilan yang terus saya kembangkan.</p>
 
-  <footer>
-    <p>&copy; 2026 Dinda Kirani W. Semua hak cipta dilindungi.</p>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon"><i class="fas fa-palette"></i></div>
+        <h3>Desain Grafis</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Canva</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Photoshop</span>
+          <span class="skill-tag">UI/UX</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-icon"><i class="fas fa-code"></i></div>
+        <h3>Web Development</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Bootstrap</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-icon"><i class="fas fa-database"></i></div>
+        <h3>Programming</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-icon"><i class="fas fa-video"></i></div>
+        <h3>Multimedia</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Video Editing</span>
+          <span class="skill-tag">CapCut</span>
+          <span class="skill-tag">Photography</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-icon"><i class="fas fa-users"></i></div>
+        <h3>Soft Skills</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Teamwork</span>
+          <span class="skill-tag">Komunikasi</span>
+          <span class="skill-tag">Problem Solving</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-3">
+        <div class="skill-icon"><i class="fas fa-tools"></i></div>
+        <h3>Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">MS Office</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Portfolio Section ===== -->
+  <section class="portfolio" id="portfolio">
+    <span class="section-label reveal">Projek</span>
+    <h2 class="section-title reveal">Karya Saya<span class="accent">.</span></h2>
+    <p class="section-subtitle reveal">Beberapa projek yang telah saya kerjakan selama belajar.</p>
+
+    <div class="portfolio-grid">
+      <div class="project-card reveal">
+        <div class="project-image">🌐</div>
+        <div class="project-info">
+          <span class="project-label">Web Development</span>
+          <h3>Website Portfolio Pribadi</h3>
+          <p>Website portfolio minimalis untuk menampilkan profil dan karya dengan desain modern dan responsif.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-image">🎨</div>
+        <div class="project-info">
+          <span class="project-label">Desain Grafis</span>
+          <h3>Desain Konten Media Sosial</h3>
+          <p>Kumpulan desain konten untuk media sosial dengan fokus pada estetika visual yang menarik dan informatif.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Canva</span>
+            <span class="project-tag">Figma</span>
+            <span class="project-tag">Photoshop</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-image">📱</div>
+        <div class="project-info">
+          <span class="project-label">UI/UX Design</span>
+          <h3>Desain Aplikasi Mobile</h3>
+          <p>Perancangan UI/UX untuk aplikasi mobile dengan pendekatan user-centered design dan wireframing.</p>
+          <div class="project-tags">
+            <span class="project-tag">Figma</span>
+            <span class="project-tag">UI/UX</span>
+            <span class="project-tag">Prototyping</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-image">💻</div>
+        <div class="project-info">
+          <span class="project-label">School Project</span>
+          <h3>Sistem Informasi Sekolah</h3>
+          <p>Pengembangan sistem informasi berbasis web untuk membantu pengelolaan data di lingkungan sekolah.</p>
+          <div class="project-tags">
+            <span class="project-tag">PHP</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section class="contact" id="contact">
+    <span class="section-label reveal">Kontak</span>
+    <h2 class="section-title reveal">Hubungi Saya<span class="accent">.</span></h2>
+    <p class="section-subtitle reveal">Punya proyek impian atau sekedar ingin berkenalan? Silakan hubungi saya.</p>
+
+    <div class="contact-wrapper">
+      <div class="contact-info reveal">
+        <h3>Mari Terhubung</h3>
+        <p>Saya selalu terbuka untuk diskusi mengenai proyek baru, kesempatan kolaborasi, atau sekadar bertukar pikiran
+          tentang teknologi dan desain.</p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-item-text">
+              <div class="label">Email</div>
+              <div class="value">dindakirani72@email.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-item-text">
+              <div class="label">Lokasi</div>
+              <div class="value">Lumajang, Jawa Timur</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <i class="fas fa-school"></i>
+            </div>
+            <div class="contact-item-text">
+              <div class="label">Sekolah</div>
+              <div class="value">SMKN 1 Lumajang</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal reveal-delay-1" action="#" method="get" id="contactForm">
+        <div class="form-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" placeholder="Masukkan nama anda..." required>
+        </div>
+        <div class="form-group">
+          <label for="email">Alamat Email</label>
+          <input type="email" id="email" name="email" placeholder="Masukkan email anda..." required>
+        </div>
+        <div class="form-group">
+          <label for="subjek">Subjek</label>
+          <input type="text" id="subjek" name="subjek" placeholder="Topik pesan anda...">
+        </div>
+        <div class="form-group">
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" placeholder="Tulis pesan anda di sini..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit">
+          <i class="fas fa-paper-plane"></i> Kirim Pesan
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 Dinda Kirani W. Made with <span class="accent">♥</span></p>
+    <div class="footer-links">
+      <a href="#hero">Beranda</a>
+      <a href="#about">Tentang</a>
+      <a href="#skills">Keahlian</a>
+      <a href="#portfolio">Projek</a>
+      <a href="#contact">Kontak</a>
+    </div>
   </footer>
 
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 100;
+        if (scrollY >= top) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+
 </body>
+
 </html>
